@@ -4,7 +4,7 @@ import { changeSideBar } from "../utils/sideBarSlice"
 const Header = () => {
     const dispatch = useDispatch()
   return (
-    <div className='grid grid-flow-col p-2 mx-1 shadow-lg'>
+    <div className='grid grid-flow-col p-2 mx-1 shadow-2xs '>
         <div className='flex col-span-1 items-center'>
             <div className='rounded-full hover:bg-gray-200 p-2 cursor-pointer'>
         <img className='w-8 h-9 mx-2 '  src='https://fonts.gstatic.com/s/i/youtube_outline/bars_3/v2/24px.svg' onClick={()=>dispatch(changeSideBar())}/>
