@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   const showSideBar = useSelector((store) => store.sideBar.sideBarStatus);
@@ -10,7 +11,8 @@ const SideBar = () => {
         <div className="p-5 shadow-lg w-40 h-screen">
           <ul>
             {siderBarMenu.map((x,index)=>{
-             return    <li className="mb-3 p-2 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li>
+             return x =="Home"? <Link to="/"> <li  className="mb-3 p-2 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li></Link>:
+             <li key={index} className="mb-3 p-2 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li>
             })}
           </ul>
           
