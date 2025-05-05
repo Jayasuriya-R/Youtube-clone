@@ -8,10 +8,10 @@ const SideBar = () => {
   return (
     <div>
       {showSideBar && (
-        <div className="p-5 shadow-lg w-40 h-screen">
+        <div className="p-5 shadow-lg w-40 h-screen col-span-2">
           <ul>
             {siderBarMenu.map((x,index)=>{
-             return x =="Home"? <Link to="/"> <li  className="mb-3 p-2 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li></Link>:
+             return x =="Home"? <Link key={index} to="/"> <li  className="mb-3 p-2 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li></Link>:
              <li key={index} className="mb-3 p-2 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li>
             })}
           </ul>

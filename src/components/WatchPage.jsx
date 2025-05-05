@@ -12,9 +12,9 @@ const WatchPage = () => {
     dispatch(closeSideBar());
   }, []);
   return (
-    <div className="mt-4 flex justify-start">
+    <div className="mt-4 col-span-10">
       <iframe
-        width="700"
+        width="800"
         height="400"
         src={`https://www.youtube.com/embed/${videoId}`}
       ></iframe>
