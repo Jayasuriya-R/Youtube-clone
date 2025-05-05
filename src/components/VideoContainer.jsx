@@ -10,7 +10,7 @@ const VideoContainer = () => {
 
  const video = useSelector(store => store.videoData?.video)
  console.log(video)
- if (video == null)return null;
+ if (!video)return null;
   return (
     <div className='flex flex-wrap justify-center'>
       {video.items.map((x)=>{
