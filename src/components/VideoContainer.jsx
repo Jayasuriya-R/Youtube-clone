@@ -3,6 +3,7 @@ import youtubeApiFetch from '../hooks/youtubeApiFetch'
 import VideoCard, { VideoCardAD } from './VideoCard';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Shimmer from './Shimmer';
 
 const VideoContainer = () => {
 
@@ -10,7 +11,7 @@ const VideoContainer = () => {
 
  const video = useSelector(store => store.videoData?.video)
  console.log(video)
- if (!video)return null;
+ if (!video)return <Shimmer/>;
   return (
     <div className='flex flex-wrap justify-center'>
       {video.items.map((x)=>{
