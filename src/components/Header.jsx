@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeSideBar } from "../utils/sideBarSlice";
+import { addSearchText, changeSideBar } from "../utils/sideBarSlice";
 import { useEffect, useState } from "react";
 import logo from "../assets/RenameIcon.png"
 import { addToCache } from "../utils/searchSlice";
@@ -11,6 +11,7 @@ const Header = () => {
   const [showSuggestion, setShowSuggestion] = useState(false);
   const searchCache = useSelector(store=> store.search)
   //   console.log(searchText)
+  if(!searchText)dispatch(addSearchText(null))
   useEffect(() => {
     //Make api call after every key press
     //Time diff of key stroke is <200 - decline the API call (Debouncing)
@@ -32,7 +33,7 @@ const Header = () => {
       `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&alt=json&q=${searchText}`
     );
     const jsonData = await data.json();
-     console.log(searchText)
+    //  console.log(searchText)
     //  console.log(jsonData[1])
     setSuggestion(jsonData[1]);
     dispatch(addToCache({
@@ -67,7 +68,7 @@ const Header = () => {
           onFocus={() => setShowSuggestion(true)}
           onBlur={() => setShowSuggestion(false)}
         />
-        <button className="border bg-gray-100 rounded-r-full text-lg border-gray-400 px-3 py-3 font-medium">
+        <button className="border bg-gray-100 rounded-r-full text-lg cursor-pointer border-gray-400 px-3 py-3 font-medium" onClick={()=>dispatch(addSearchText(searchText))}>
         Search
         </button>
         {showSuggestion && (
@@ -75,7 +76,9 @@ const Header = () => {
             <ul>
               {suggestion.map((x) => {
                 return (
-                  <li key={x} className="px-3 py-1 hover:bg-gray-100 flex">
+                  <li key={x} className="px-3 py-1 cursor-pointer hover:bg-gray-100 flex" onMouseDown={() => {
+                    setSearchText(x)
+                    }}>
                     <img className="w-5 h-5 mr-2" src={logo}/> {x}
                   </li>
                 );

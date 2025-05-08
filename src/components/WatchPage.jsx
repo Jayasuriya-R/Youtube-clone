@@ -13,7 +13,7 @@ const WatchPage = () => {
   if (!video)return null;
 
   const movieDetails = video.items.filter((i) => i.id === videoId);
- if(movieDetails)console.log()
+
   
    
   useEffect(() => {
@@ -42,7 +42,7 @@ const WatchPage = () => {
     }k views</p>
     </div>
     </div>
-    <CommentsContainer/>
+    <CommentsContainer />
     </div>
   );
 };
