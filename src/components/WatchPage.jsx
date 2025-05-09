@@ -10,9 +10,15 @@ const WatchPage = () => {
   const videoId = searchParams.get("v");
   
   const video = useSelector(store => store.videoData?.video)
+  const searchText = useSelector(store => store.sideBar?.searchText)
+  const searchData = useSelector(store => store.videoData?.searchVideo)
+
   if (!video)return null;
 
-  const movieDetails = video.items.filter((i) => i.id === videoId);
+  const dataSource = searchText ? searchData : video;
+  const filteredData = dataSource?.items?.filter((i) => i.id.videoId === videoId || i.id === videoId);
+  const videoDetails = filteredData?.[0];
+  
 
   
    
@@ -35,11 +41,13 @@ const WatchPage = () => {
     </div>
     
     <div className=" font-extrabold py-2 px-1 w-[50rem]"> 
-    <h1>{movieDetails[0].snippet.title}</h1>
+    <h1>{videoDetails?.snippet?.title }</h1>
     <div className="flex justify-between my-2 font-bold">
-    <h1 className="border p-2 bg-gray-200 border-gray-100 rounded-lg">  {movieDetails[0].snippet.channelTitle}</h1>
-    <p className="border p-2 bg-gray-200 border-gray-100 rounded-lg">{movieDetails[0].statistics.viewCount % 1000 
-    }k views</p>
+    <h1 className="border p-2 bg-gray-200 border-gray-100 rounded-lg">  {videoDetails?.snippet?.channelTitle}</h1>
+    <p className="border p-2 bg-gray-200 border-gray-100 rounded-lg">{videoDetails?.statistics?.viewCount
+              ? `${(videoDetails.statistics.viewCount / 1000).toFixed(1)}k views`
+              : "N/A"
+    }</p>
     </div>
     </div>
     <CommentsContainer />
