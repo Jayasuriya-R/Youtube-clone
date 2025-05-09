@@ -3,6 +3,7 @@ import { useDispatch ,useSelector} from "react-redux";
 import { closeSideBar } from "../utils/sideBarSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
@@ -27,10 +28,11 @@ const WatchPage = () => {
   }, []);
   return (
     <div className="col-span-10">
-    <div className="mt-4 ">
+    <div className="mt-4 flex">
+      <div>
       <iframe
-        width="800"
-        height="400"
+        width="900"
+        height="500"
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
         title="YouTube video player"
         frameBorder="0"
@@ -39,8 +41,11 @@ const WatchPage = () => {
       ></iframe>
      
     </div>
-    
-    <div className=" font-extrabold py-2 px-1 w-[50rem]"> 
+    <div className="w-full">
+    <LiveChat/>
+    </div>
+    </div>
+    <div className=" font-extrabold py-2 px-1 w-[56rem]"> 
     <h1>{videoDetails?.snippet?.title }</h1>
     <div className="flex justify-between my-2 font-bold">
     <h1 className="border p-2 bg-gray-200 border-gray-100 rounded-lg">  {videoDetails?.snippet?.channelTitle}</h1>
@@ -50,6 +55,8 @@ const WatchPage = () => {
     }</p>
     </div>
     </div>
+    
+    
     <CommentsContainer />
     </div>
   );
