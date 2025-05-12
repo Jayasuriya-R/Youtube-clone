@@ -8,6 +8,7 @@ import useYoutubeApiFetch from '../hooks/useYoutubeApiFetch'
 import Shimmer from './Shimmer'
 import { useState } from 'react'
 import { addSearchVideo } from '../utils/videoDataSlice'
+import { closeSideBar } from '../utils/sideBarSlice'
 
 const MainContainer = () => {
   const searchKeyWord = useSelector((store) => store.sideBar.searchText);
@@ -32,7 +33,7 @@ const MainContainer = () => {
         );
         const json = await data.json();
         dispatch(addSearchVideo(json)); 
-        console.log(json)
+        // console.log(json)
       } catch (err) {
         console.error('YouTube API error:', err);
       } finally {
@@ -46,7 +47,7 @@ const MainContainer = () => {
   if (loading || (!defaultVideos && !searchResult)) return <Shimmer />;
 
   return (
-    <div className="col-span-10 pt-[2%] pl-[1%]">
+    <div className="col-span-10 pt-[2%] pl-[1%]" >
       <ButtonList />
       <VideoContainer video={searchKeyWord ? searchResult : defaultVideos} />
     </div>

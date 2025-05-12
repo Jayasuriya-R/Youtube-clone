@@ -10,7 +10,7 @@ const CommentsContainer = () => {
   const commentAPI = async () =>{
     const data = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=vLTc-j6krUo&key=${Youtube_API_Key}`);
     const json = await data.json()
-    console.log(json)
+    // console.log(json)
   }
   useEffect(()=>{
     commentAPI();

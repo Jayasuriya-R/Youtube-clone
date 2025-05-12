@@ -8,10 +8,9 @@ const chatSlice = createSlice({
   },
   reducers: {
     addMessages: (state, action) => {
-      if (state.messages.length >= liveChatCount) {
-        state.messages.pop(); // removes last (oldest) message
-      }
-      state.messages.unshift(action.payload);
+      state.messages.splice(liveChatCount,1);
+      state.messages.push(action.payload);
+      // assign new reference
     },
   },
 });
