@@ -27,7 +27,7 @@ const WatchPage = () => {
     dispatch(closeSideBar());
   }, []);
   return (
-    <div className="col-span-10">
+    <div className="col-span-10 ml-[50px] mt-[100px]">
     <div className="mt-4 flex">
       <div>
       <iframe

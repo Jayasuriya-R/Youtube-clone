@@ -47,7 +47,7 @@ const MainContainer = () => {
   if (loading || (!defaultVideos && !searchResult)) return <Shimmer />;
 
   return (
-    <div className="col-span-10 pt-[2%] pl-[1%]" >
+    <div className="col-span-10 mt-[90px] ml-[10px] pt-[2%] pl-[1%]" >
       <ButtonList />
       <VideoContainer video={searchKeyWord ? searchResult : defaultVideos} />
     </div>

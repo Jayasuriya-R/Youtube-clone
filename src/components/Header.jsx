@@ -41,7 +41,7 @@ const Header = () => {
     }))
   };
   return (
-    <div className="grid grid-flow-col p-2 mx-1 shadow-2xs">
+    <div className="fixed top-0 left-0 w-full z-50 grid bg-white shadow px-4 py-2 grid-flow-col ">
       <div className="flex col-span-1 items-center">
         <div className="rounded-full hover:bg-gray-200 p-2 cursor-pointer ">
           <img

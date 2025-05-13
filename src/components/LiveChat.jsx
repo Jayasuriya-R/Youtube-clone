@@ -51,7 +51,7 @@ const LiveChat = () => {
         />
         <button
           className="border border-gray-200 cursor-pointer hover:bg-gray-300 bg-gray-200 p-2 w-18 rounded-lg"
-          onClick={() => {
+          onClick={() => { 
             dispatch(
               addMessages({
                 name: "surya",
