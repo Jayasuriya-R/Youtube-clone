@@ -72,7 +72,7 @@ const Header = () => {
         Search
         </button>
         {showSuggestion && (
-          <div className="fixed ml-[9%] mt-1 px-3 py-3 bg-white rounded-lg text-left w-[44rem] shadow-2xl border border-gray-100">
+          <div className="fixed ml-[10%] mt-1 px-3 py-3 bg-white rounded-lg text-left w-5/12 shadow-2xl border border-gray-100">
             <ul>
               {suggestion.map((x) => {
                 return (
