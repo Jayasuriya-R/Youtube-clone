@@ -30,7 +30,7 @@ const Header = () => {
 
   const getSearchSuggestion = async () => {
     const data = await fetch(
-      `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&alt=json&q=${searchText}`
+      `https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&alt=json&q=${searchText}`
     );
     const jsonData = await data.json();
     //  console.log(searchText)
