@@ -41,13 +41,13 @@ const Header = () => {
     }))
   };
   return (
-    <div className="fixed top-0 left-0 w-full z-50 grid bg-white shadow px-4 py-2 grid-flow-col ">
+    <div className="fixed top-0 left-0 w-full z-50 grid  bg-white shadow px-4 py-2 grid-flow-col ">
       <div className="flex col-span-1 items-center">
-        <div className="rounded-full hover:bg-gray-200 p-2 cursor-pointer ">
+        <div className="rounded-full hover:bg-gray-200 p-2  cursor-pointer " onClick={() => dispatch(changeSideBar())}>
           <img
-            className="w-8 h-9 ml-1 "
+            className="w-8 h-9 "
             src="https://fonts.gstatic.com/s/i/youtube_outline/bars_3/v2/24px.svg"
-            onClick={() => dispatch(changeSideBar())}
+            
           />
         </div>
         <img
@@ -55,10 +55,10 @@ const Header = () => {
           src="https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_round/v2/24px.svg"
           alt="logo"
         />
-        <span className=" font-bold text-xl">YouTube</span>
+        <span className=" font-bold text-xl ">YouTube</span>
       </div>
 
-      <div className="col-span-9 mt-[20px] mr-4 text-center">
+      <div className="col-span-9 mt-[20px] mr-4 font-serif text-center">
         <input
           className="w-8/12 font-medium text-lg rounded-l-full font-serif border border-gray-400 px-3 py-3"
           type="text"

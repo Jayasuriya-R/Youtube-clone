@@ -1,22 +1,32 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const VideoCard = ({ info }) => {
+  const sideBarStatus = useSelector(store=> store.sideBar.sideBarStatus)
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="p-4 m-2 w-80 h-76 font-bold text-[15px] shadow-lg rounded-lg hover:bg-gray-100">
-      <img
-        className="rounded-lg mb-2"
-        src={thumbnails?.medium?.url}
-        alt="video"
-      />
-      <h1>{title}</h1>
-      <div className="flex justify-between flex-wrap font-medium py-1 px-1">
-        <p>{channelTitle}</p>
-        <p>{statistics?.viewCount ? `${statistics.viewCount} views` : "N/A"}</p>
-      </div>
+   <div className={`w-[350px] m-2 p-3 rounded-lg mx-3 my-3 cursor-pointer ${!sideBarStatus ? 'transition-transform duration-300 ease-in-out transform hover:scale-105 hover:brightness-110' : ''}`}
+>
+  <img
+    className="w-full h-44 object-cover rounded-lg"
+    src={thumbnails?.medium?.url}
+    alt="video thumbnail"
+  />
+  <div className="flex mt-3">
+    {/* Placeholder avatar - you can replace with actual channel image if available */}
+    <div className="flex flex-col">
+      <h2 className="text-sm font-semibold text-black line-clamp-2">
+        {title}
+      </h2>
+      <p className="text-gray-600 text-xs">{channelTitle}</p>
+      <p className="text-gray-600 text-xs">
+        {statistics?.viewCount ? `${Number(statistics.viewCount).toLocaleString()} views` : ""}
+      </p>
     </div>
+  </div>
+</div>
   );
 };
 //Higher order component
