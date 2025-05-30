@@ -60,7 +60,7 @@ const Header = () => {
 
       <div className="col-span-9 mt-[20px] mr-4 text-center">
         <input
-          className="w-8/12 font-medium text-lg rounded-l-full  border border-gray-400 px-3 py-3"
+          className="w-8/12 font-medium text-lg rounded-l-full font-serif border border-gray-400 px-3 py-3"
           type="text"
           placeholder="Search"
           value={searchText}

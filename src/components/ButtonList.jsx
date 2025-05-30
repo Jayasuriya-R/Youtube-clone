@@ -10,7 +10,7 @@ const ButtonList = () => {
   return (
     <div className='flex justify-center ' >
     {btnItems.map((x)=>{
-       return <div onClick={()=>dispatch(addSearchText(x==="All"?null:x))}><Button  key={x} name={x}/></div>
+       return <div  onClick={()=>dispatch(addSearchText(x==="All"?null:x))}><Button  key={x} name={x}/></div>
      })} 
        
     </div>
