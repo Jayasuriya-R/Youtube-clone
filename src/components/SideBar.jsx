@@ -11,7 +11,7 @@ const SideBar = () => {
     <div>
       {showSideBar && (
         <div className="fixed flex-col justify-between ">
-        <div className="flex mt-[90px]  p-5 bg-white shadow-lg w-40 h-screen col-span-2 font-serif">
+        <div className="flex mt-[90px]  p-5 bg-white shadow-lg w-50 h-screen col-span-2 font-serif">
           <ul >
             {siderBarMenu.map((x,index)=>{
              return x =="🏠 Home"? <Link key={index} to="/"> <li onClick={()=>dispatch(addSearchText(null))} className="mb-3 mt-3 px-2 py-1 cursor-pointer hover:bg-gray-200 rounded-lg font-medium">{x}</li></Link>:

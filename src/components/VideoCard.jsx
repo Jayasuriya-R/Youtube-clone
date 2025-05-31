@@ -7,7 +7,7 @@ const VideoCard = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-   <div className={`w-[350px] m-2 p-3 rounded-lg mx-3 my-3 cursor-pointer ${!sideBarStatus ? 'transition-transform duration-300 ease-in-out transform hover:scale-105 hover:brightness-110' : ''}`}
+   <div className={`w-[370px] m-2 p-3 rounded-lg mx-3 my-3 cursor-pointer ${!sideBarStatus ? 'transition-transform duration-300 ease-in-out transform hover:scale-105 hover:brightness-110' : ''}`}
 >
   <img
     className="w-full h-44 object-cover rounded-lg"
