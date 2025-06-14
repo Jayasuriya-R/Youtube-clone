@@ -8,7 +8,7 @@ const ButtonList = () => {
   const searchText = useSelector(store => store.sideBar.searchText)
   const btnItems = ["All","Gaming","Songs","News","Cricket","Live","Cooking","Pupg","IPL","Web series"]
   return (
-    <div className='flex justify-center ' >
+    <div className='flex justify-center '>
     {btnItems.map((x)=>{
        return <div  onClick={()=>{
         dispatch(addSearchText(x==="All"?null:x))
